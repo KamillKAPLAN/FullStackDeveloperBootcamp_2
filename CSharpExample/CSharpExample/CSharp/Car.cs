@@ -1,4 +1,4 @@
-﻿namespace CSharpExample
+﻿namespace CSharpExample.CSharp
 {
     public class Car
     {

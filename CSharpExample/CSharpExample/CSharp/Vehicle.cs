@@ -1,4 +1,4 @@
-﻿namespace CSharpExample
+﻿namespace CSharpExample.CSharp
 {
     public abstract class BaseTbl // base class -Vehicle
     {

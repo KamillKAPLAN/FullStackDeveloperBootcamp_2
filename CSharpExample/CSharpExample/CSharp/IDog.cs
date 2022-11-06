@@ -1,4 +1,4 @@
-﻿namespace CSharpExample
+﻿namespace CSharpExample.CSharp
 {
     internal interface IDog
     {
