@@ -63,10 +63,11 @@
     {
         public override void AnimalSound()
         {
+            // base.AnimalSound();
             Console.WriteLine("Animal Cat Miav Miav");
         }
     }
-
+    /* Interface */
     class Dog : IAnimal, IDog
     {
         public void AnimalSound()

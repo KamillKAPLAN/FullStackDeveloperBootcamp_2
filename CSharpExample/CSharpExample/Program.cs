@@ -85,14 +85,14 @@ numbers[0] = 5;
 Array.Sort(numbers);
 Console.WriteLine();
 
-VoidMetot();
+//VoidMetot();
 void VoidMetot()
 {
     Console.WriteLine("Void Metot");
 }
 
 // params
-StaticMetot();
+//StaticMetot();
 static void StaticMetot()
 {
     Console.WriteLine("Static Void Metot");
@@ -122,12 +122,12 @@ int CalMetot(int s1, int s2, string operat)
 
     };
 }
-Console.WriteLine(CalMetot(5, 10, "*"));
+//Console.WriteLine(CalMetot(5, 10, "*"));
 
 /* CLASSES */
 
-Car car = new Car();
-car.Color = "Kırmızı";
+//Car car = new Car();
+//car.Color = "Kırmızı";
 
 /*
  * public 
@@ -149,7 +149,48 @@ car.Color = "Kırmızı";
 //Person student = new Student();
 //student.MetotC();
 
-Animal animal = new Animal();
-Animal catAnimal = new Cat();
-animal.AnimalSound();
-catAnimal.AnimalSound();
+/*
+ * Animal animal = new Animal();
+ * Animal catAnimal = new Cat();
+ * animal.AnimalSound();
+ * catAnimal.AnimalSound(); 
+ */
+
+//Dog dog = new Dog();
+//dog.AnimalSound();
+
+EnmLevel enmLevel = EnmLevel.Low;
+Console.WriteLine(enmLevel);
+
+Console.WriteLine((int)EnmMonth.May);
+Console.WriteLine((int)EnmMonth.July);
+
+var enmValue = EnmLevel.Low;
+var reuslt = enmValue switch
+{
+    EnmLevel.Low => "Low Level",
+    EnmLevel.Medium => "Medium Level",
+    EnmLevel.High => "High LEvel",
+    _ => ""
+};
+
+switch (enmValue)
+{
+    case EnmLevel.Low: Console.Write("Low Level"); break;
+    case EnmLevel.Medium: Console.Write("Medium Level"); break;
+    case EnmLevel.High: Console.Write("High Level"); break;
+    default: break;
+}
+try
+{
+    Console.WriteLine(numbers[10]);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+    //throw;
+}
+finally
+{
+    Console.WriteLine("'try catch tamamlandı.");
+}
