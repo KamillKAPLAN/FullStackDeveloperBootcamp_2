@@ -7,6 +7,8 @@
  select * from SalesLT.Address where StateProvince != 'Washington'
  select * from SalesLT.Address order by City desc, StateProvince asc
  select * from SalesLT.Address where AddressLine2 is null and ModifiedDate = '2005-09-01 00:00:00.000'
+
+ DBCC CHECKIDENT ('Products', RESEED, 0); --table Id restart
  */
 
  -- top
