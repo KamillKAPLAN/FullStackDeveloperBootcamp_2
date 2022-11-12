@@ -137,7 +137,17 @@
   values (@CustomerName, @ContactName, @Address, @City, @PostalCode, @Country)
   
   exec sp_insertCustomer 'Kamil', 'Ev', 'Zafer Mah. Bahç. /İST.', 'İstanbul', 2435, 'Türkiye'
+
+   create procedure sp_updateCustomer @Id int, @CustomerName nchar(50), @ContactName nchar(50) = null
+   as
+   update Customers 
+   set CustomerName = @CustomerName, ContactName = @ContactName
+   where Id = @Id
+ 
+   exec sp_updateCustomer @Id = 92,  @CustomerName = 'KAMİL'
  */
+
+
 
 
 
