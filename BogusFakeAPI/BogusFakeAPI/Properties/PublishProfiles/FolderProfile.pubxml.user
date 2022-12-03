@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2022-12-03T22:32:19.5995996Z;True|2022-12-03T14:20:08.5471870-08:00;True|2022-12-03T14:18:20.9784503-08:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

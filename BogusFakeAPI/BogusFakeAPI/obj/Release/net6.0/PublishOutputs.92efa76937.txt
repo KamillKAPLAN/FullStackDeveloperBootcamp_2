@@ -1,0 +1,12 @@
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\BogusFakeAPI.exe
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\BogusFakeAPI.dll
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\BogusFakeAPI.deps.json
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\BogusFakeAPI.runtimeconfig.json
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\BogusFakeAPI.pdb
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\Bogus.dll
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kamilkaplan\Desktop\Bootcamps\FullStackDeveloperBootcamps\FullStackDeveloperBootcamp_2\BogusFakeAPI\BogusFakeAPI\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

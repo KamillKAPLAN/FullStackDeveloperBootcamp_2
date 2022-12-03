@@ -1,0 +1,52 @@
+http metot tipleri :
+ - get     : 
+ - post    :
+ - put     :
+ - delete  :
+
+endpoint
+ + get : kamilkaplan.com/api/products
+ X kamilkaplan.com/api/getproducts
+
+ + get : kamilkaplan.com/api/products/10
+ X kamilkaplan.com/api/getproductbyId/10
+
+ + post : kamilkaplan.com/api/products
+ X kamilkaplan.com/api/saveproduct
+
+ + put : kamilkaplan.com/api/products
+ X kamilkaplan.com/api/updateproduct
+
+ + delete : kamilkaplan.com/api/products/2
+ X kamilkaplan.com/api/deleteproduct
+
+http durum kodları
+ - 100 : bilgi
+ - 200 : başarılı
+  - 201 : created
+  - 204 : nocontext - deleted and updated
+ - 300 : yönlendirme mesajları
+ - 400 : client err
+  - 401 : isteği yapan kişi bilinmiyorsa
+  - 403 : yetki 
+  - 404 : data yok
+ - 500 : server err
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

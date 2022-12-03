@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "pNc2TxMSxrByusDpYHnTMzFuYtIpCPiT9oldw5LVzBHg4LLoYAgIQkM8KJzSGNRDl5qOwxYU6JPh9o5Gxwgvrw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kamilkaplan\\Desktop\\Bootcamps\\FullStackDeveloperBootcamps\\FullStackDeveloperBootcamp_2\\BogusFakeAPI\\BogusFakeAPI\\BogusFakeAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kamilkaplan\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
+    "C:\\Users\\kamilkaplan\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\kamilkaplan\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\kamilkaplan\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\kamilkaplan\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\kamilkaplan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\kamilkaplan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
