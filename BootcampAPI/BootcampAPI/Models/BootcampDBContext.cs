@@ -16,6 +16,7 @@ namespace BootcampAPI.Models
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Grade> Grades { get; set; }
+        public DbSet<Standard> Standards { get; set; }
 
         /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -28,7 +29,7 @@ namespace BootcampAPI.Models
         {
             base.OnModelCreating(modelBuilder);
             // Fluent API
-            modelBuilder.HasDefaultSchema("Boot");
+            /*modelBuilder.HasDefaultSchema("Boot");
 
             modelBuilder.Entity<Student>().ToTable("StudentInfo");
             modelBuilder.Entity<Student>().ToTable("StudentInfo", "FullStack");
@@ -37,6 +38,9 @@ namespace BootcampAPI.Models
             modelBuilder.Entity<Student>().Property(p => p.BirthDate).HasColumnName("DoB").HasColumnOrder(3).HasColumnType("datetime2");
             modelBuilder.Entity<Student>().Property(p => p.Height).IsRequired();
             modelBuilder.Entity<Student>().Property(p => p.Name).HasMaxLength(30);
+            modelBuilder.Entity<Student>().Property(p => p.IsDeleted).HasDefaultValue(false); */
+
+            // modelBuilder.Entity<Standard>().HasNoKey();
         }
     }
 }

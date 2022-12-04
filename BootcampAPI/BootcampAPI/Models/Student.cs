@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using BootcampAPI.Models;
 
 namespace BootcampAPI.Models
 {
@@ -26,4 +27,4 @@ namespace BootcampAPI.Models
         public int StandardId { get; set; }
         public Standard Standard { get; set; }
     }
-}
+

@@ -9,16 +9,13 @@ namespace BootcampAPI.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.EnsureSchema(
-                name: "Bootacamp");
-
             migrationBuilder.CreateTable(
                 name: "Grades",
                 columns: table => new
                 {
                     GradeId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    GradeName = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    GradeName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Section = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
@@ -32,16 +29,30 @@ namespace BootcampAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "StudentInfo",
-                schema: "Bootacamp",
+                name: "Standards",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    StudentName = table.Column<string>(type: "nchar(10)", maxLength: 10, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Standards", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Students",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Height = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Weight = table.Column<float>(type: "real", nullable: false),
                     GradeId = table.Column<int>(type: "int", nullable: false),
+                    StandardId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     UptatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -50,30 +61,42 @@ namespace BootcampAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StudentInfo", x => x.Id);
+                    table.PrimaryKey("PK_Students", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_StudentInfo_Grades_GradeId",
+                        name: "FK_Students_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
                         principalColumn: "GradeId",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Students_Standards_StandardId",
+                        column: x => x.StandardId,
+                        principalTable: "Standards",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_StudentInfo_GradeId",
-                schema: "Bootacamp",
-                table: "StudentInfo",
+                name: "IX_Students_GradeId",
+                table: "Students",
                 column: "GradeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Students_StandardId",
+                table: "Students",
+                column: "StandardId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "StudentInfo",
-                schema: "Bootacamp");
+                name: "Students");
 
             migrationBuilder.DropTable(
                 name: "Grades");
+
+            migrationBuilder.DropTable(
+                name: "Standards");
         }
     }
 }

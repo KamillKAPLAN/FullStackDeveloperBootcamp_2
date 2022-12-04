@@ -58,6 +58,23 @@ namespace BootcampAPI.Migrations
                     b.ToTable("Grades");
                 });
 
+            modelBuilder.Entity("BootcampAPI.Models.Standard", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Standards");
+                });
+
             modelBuilder.Entity("BootcampAPI.Models.Student", b =>
                 {
                     b.Property<int>("Id")
@@ -88,6 +105,9 @@ namespace BootcampAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("StandardId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("UptatedAt")
                         .HasColumnType("datetime2");
 
@@ -101,6 +121,8 @@ namespace BootcampAPI.Migrations
 
                     b.HasIndex("GradeId");
 
+                    b.HasIndex("StandardId");
+
                     b.ToTable("Students");
                 });
 
@@ -112,10 +134,23 @@ namespace BootcampAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("BootcampAPI.Models.Standard", "Standard")
+                        .WithMany("Students")
+                        .HasForeignKey("StandardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Grade");
+
+                    b.Navigation("Standard");
                 });
 
             modelBuilder.Entity("BootcampAPI.Models.Grade", b =>
+                {
+                    b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("BootcampAPI.Models.Standard", b =>
                 {
                     b.Navigation("Students");
                 });
