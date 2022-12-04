@@ -23,5 +23,7 @@ namespace BootcampAPI.Models
         public int GradeId { get; set; }
         //[ForeignKey("GradeId")]
         public Grade Grade { get; set; }
+        public int StandardId { get; set; }
+        public Standard Standard { get; set; }
     }
 }

@@ -27,6 +27,16 @@ namespace BootcampAPI.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            // Fluent API
+            modelBuilder.HasDefaultSchema("Boot");
+
+            modelBuilder.Entity<Student>().ToTable("StudentInfo");
+            modelBuilder.Entity<Student>().ToTable("StudentInfo", "FullStack");
+
+            modelBuilder.Entity<Standard>().HasKey(s => s.Key);
+            modelBuilder.Entity<Student>().Property(p => p.BirthDate).HasColumnName("DoB").HasColumnOrder(3).HasColumnType("datetime2");
+            modelBuilder.Entity<Student>().Property(p => p.Height).IsRequired();
+            modelBuilder.Entity<Student>().Property(p => p.Name).HasMaxLength(30);
         }
     }
 }
