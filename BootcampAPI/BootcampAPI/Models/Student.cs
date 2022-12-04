@@ -27,4 +27,5 @@ namespace BootcampAPI.Models
         public int StandardId { get; set; }
         public Standard Standard { get; set; }
     }
+}
 
