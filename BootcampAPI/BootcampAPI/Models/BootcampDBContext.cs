@@ -23,5 +23,10 @@ namespace BootcampAPI.Models
                 // optionsBuilder.UseSqlServer("Server=DESKTOP-V3D3OKC;Database=BootcampDb;User Id=sa;Password=1;");
                 optionsBuilder.UseSqlServer(_configuration.GetSection("SqlConnectionString").Get<string>());
         }*/
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
