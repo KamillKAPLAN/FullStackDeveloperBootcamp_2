@@ -10,8 +10,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//builder.Services.AddDbContext<BootcampDBContext>(options =>
+//    options.UseSqlServer("Server=DESKTOP-V3D3OKC;Database=BootcampDb;User Id=sa;Password=1;")
+//);
 builder.Services.AddDbContext<BootcampDBContext>(options =>
-    options.UseSqlServer("Server=DESKTOP-V3D3OKC;Database=BootcampDb;User Id=sa;Password=1;")
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnectionString"))
 );
 
 var app = builder.Build();

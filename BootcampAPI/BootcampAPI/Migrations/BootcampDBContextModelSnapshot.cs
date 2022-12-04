@@ -38,7 +38,8 @@ namespace BootcampAPI.Migrations
 
                     b.Property<string>("GradeName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");

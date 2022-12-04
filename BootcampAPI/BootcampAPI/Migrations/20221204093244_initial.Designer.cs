@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BootcampAPI.Migrations
 {
     [DbContext(typeof(BootcampDBContext))]
-    [Migration("20221204082807_dataanotation")]
-    partial class dataanotation
+    [Migration("20221204093244_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,7 +40,8 @@ namespace BootcampAPI.Migrations
 
                     b.Property<string>("GradeName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
