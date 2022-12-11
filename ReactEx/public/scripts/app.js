@@ -14,136 +14,41 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 var root = document.getElementById("root");
-/* https://medium.com/kodcular/reactjs-state-nedir-class-componentlerinde-nas%C4%B1l-kullan%C4%B1l%C4%B1r-68694a9e0173 */
-var Header = /*#__PURE__*/function (_React$Component) {
-  _inherits(Header, _React$Component);
-  var _super = _createSuper(Header);
-  function Header() {
-    _classCallCheck(this, Header);
-    return _super.apply(this, arguments);
-  }
-  _createClass(Header, [{
-    key: "render",
-    value: function render() {
-      console.log("Header Props : ", this.props);
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, this.props.title), /*#__PURE__*/React.createElement("div", null, this.props.description));
-    }
-  }]);
-  return Header;
-}(React.Component);
-var TodoList = /*#__PURE__*/function (_React$Component2) {
-  _inherits(TodoList, _React$Component2);
-  var _super2 = _createSuper(TodoList);
-  /* Uncaught TypeError: Cannot read properties of undefined (reading 'props') ÇÖZÜM */
-  function TodoList(props) {
+var Car = /*#__PURE__*/function (_React$Component) {
+  _inherits(Car, _React$Component);
+  var _super = _createSuper(Car);
+  function Car(props) {
     var _this;
-    _classCallCheck(this, TodoList);
-    _this = _super2.call(this, props);
-    _this.clearItems = _this.clearItems.bind(_assertThisInitialized(_this));
+    _classCallCheck(this, Car);
+    _this = _super.call(this, props);
+    _this.changeColor = _this.changeColor.bind(_assertThisInitialized(_this));
+    _this.state = {
+      brand: "Opel",
+      model: "Astra",
+      color: "red",
+      year: 2020
+    };
     return _this;
   }
-  _createClass(TodoList, [{
-    key: "clearItems",
-    value: function clearItems() {
+  _createClass(Car, [{
+    key: "changeColor",
+    value: function changeColor() {
       console.log(this);
-      console.log("Clear Items : ", this.props.items);
+      /* this.state.color = "YELLOW"; */
+      this.setState({
+        color: "YELLOW",
+        model: "Corsa"
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      console.log("TodoList Props : ", this.props.items);
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("ul", null,
-      /*
-      this.props.items.map((item, index) =>
-          <li key={index}>{item}</li>
-      ) */
-      this.props.items.map(function (item, index) {
-        return /*#__PURE__*/React.createElement(TodoItem, {
-          key: index,
-          item: item
-        });
-      })), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("button", {
-        onClick: this.clearItems
-      }, "Clear Items")));
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, this.state.brand, " - ", this.state.model), /*#__PURE__*/React.createElement("p", null, "Selected Color : ", this.state.color), /*#__PURE__*/React.createElement("button", {
+        onClick: this.changeColor
+      }, "Change Color"));
     }
   }]);
-  return TodoList;
-}(React.Component);
-var TodoItem = /*#__PURE__*/function (_React$Component3) {
-  _inherits(TodoItem, _React$Component3);
-  var _super3 = _createSuper(TodoItem);
-  function TodoItem() {
-    _classCallCheck(this, TodoItem);
-    return _super3.apply(this, arguments);
-  }
-  _createClass(TodoItem, [{
-    key: "render",
-    value: function render() {
-      console.log("TodoItem Props : ", this.props.item);
-      return /*#__PURE__*/React.createElement("li", null, this.props.item);
-    }
-  }]);
-  return TodoItem;
-}(React.Component);
-var Action = /*#__PURE__*/function (_React$Component4) {
-  _inherits(Action, _React$Component4);
-  var _super4 = _createSuper(Action);
-  function Action(props) {
-    _classCallCheck(this, Action);
-    return _super4.call(this, props);
-  }
-  _createClass(Action, [{
-    key: "onFormSubmit",
-    value: function onFormSubmit(event) {
-      event.preventDefault();
-      var item = event.target.elements.txtItem.value.trim();
-      if (item) {
-        console.log(item);
-        event.target.elements.txtItem.value = "";
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
-        onSubmit: this.onFormSubmit
-      }, /*#__PURE__*/React.createElement("input", {
-        type: "text",
-        name: "txtItem",
-        id: "txtItem"
-      }), /*#__PURE__*/React.createElement("button", {
-        type: "submit"
-      }, "Add Item")));
-    }
-  }]);
-  return Action;
-}(React.Component);
-var TodoApp = /*#__PURE__*/function (_React$Component5) {
-  _inherits(TodoApp, _React$Component5);
-  var _super5 = _createSuper(TodoApp);
-  function TodoApp() {
-    _classCallCheck(this, TodoApp);
-    return _super5.apply(this, arguments);
-  }
-  _createClass(TodoApp, [{
-    key: "render",
-    value: function render() {
-      var title = "Todo Application !";
-      var description = "Lorem ipsum dolor sit amet consectetur adipisicing.";
-      var app = {
-        title: "Todo Application !!!",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit?",
-        items: ["item 1", "item 2", "item 3", "item 4"]
-      };
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, {
-        title: app.title,
-        description: app.description
-      }), /*#__PURE__*/React.createElement(TodoList, {
-        items: app.items
-      }), /*#__PURE__*/React.createElement(Action, null));
-    }
-  }]);
-  return TodoApp;
+  return Car;
 }(React.Component);
 /* ReactDOM */
-ReactDOM.render( /*#__PURE__*/React.createElement(TodoApp, null), root);
+ReactDOM.render( /*#__PURE__*/React.createElement(Car, null), root);
