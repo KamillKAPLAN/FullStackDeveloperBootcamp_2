@@ -1,3 +1,4 @@
+const root = document.getElementById("root");
 
 /* ReactDOM */
-ReactDOM.render("", document.getElementById("root"));
+ReactDOM.render("", root);
