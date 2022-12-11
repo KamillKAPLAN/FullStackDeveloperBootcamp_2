@@ -33,15 +33,25 @@ var Header = /*#__PURE__*/function (_React$Component) {
 var TodoList = /*#__PURE__*/function (_React$Component2) {
   _inherits(TodoList, _React$Component2);
   var _super2 = _createSuper(TodoList);
-  function TodoList() {
+  /* Uncaught TypeError: Cannot read properties of undefined (reading 'props') ÇÖZÜM */
+  function TodoList(props) {
+    var _this;
     _classCallCheck(this, TodoList);
-    return _super2.apply(this, arguments);
+    _this = _super2.call(this, props);
+    _this.clearItems = _this.clearItems.bind(_assertThisInitialized(_this));
+    return _this;
   }
   _createClass(TodoList, [{
+    key: "clearItems",
+    value: function clearItems() {
+      console.log(this);
+      console.log("Clear Items : ", this.props.items);
+    }
+  }, {
     key: "render",
     value: function render() {
       console.log("TodoList Props : ", this.props.items);
-      return /*#__PURE__*/React.createElement("ul", null,
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("ul", null,
       /*
       this.props.items.map((item, index) =>
           <li key={index}>{item}</li>
@@ -51,7 +61,9 @@ var TodoList = /*#__PURE__*/function (_React$Component2) {
           key: index,
           item: item
         });
-      }));
+      })), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("button", {
+        onClick: this.clearItems
+      }, "Clear Items")));
     }
   }]);
   return TodoList;
@@ -75,14 +87,26 @@ var TodoItem = /*#__PURE__*/function (_React$Component3) {
 var Action = /*#__PURE__*/function (_React$Component4) {
   _inherits(Action, _React$Component4);
   var _super4 = _createSuper(Action);
-  function Action() {
+  function Action(props) {
     _classCallCheck(this, Action);
-    return _super4.apply(this, arguments);
+    return _super4.call(this, props);
   }
   _createClass(Action, [{
+    key: "onFormSubmit",
+    value: function onFormSubmit(event) {
+      event.preventDefault();
+      var item = event.target.elements.txtItem.value.trim();
+      if (item) {
+        console.log(item);
+        event.target.elements.txtItem.value = "";
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("button", null, "Clear Items")), /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("input", {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
+        onSubmit: this.onFormSubmit
+      }, /*#__PURE__*/React.createElement("input", {
         type: "text",
         name: "txtItem",
         id: "txtItem"

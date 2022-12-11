@@ -15,23 +15,42 @@ class Header extends React.Component {
 }
 
 class TodoList extends React.Component {
+
+    /* Uncaught TypeError: Cannot read properties of undefined (reading 'props') ÇÖZÜM */
+    constructor(props) {
+        super(props);
+        this.clearItems = this.clearItems.bind(this);
+    }
+
+    clearItems() {
+        console.log(this)
+        console.log("Clear Items : ", this.props.items);
+    }
+
     render() {
         console.log("TodoList Props : ", this.props.items)
         return (
-            <ul>
-                {/* <TodoItem />
-                <TodoItem />
-                <TodoItem /> */}
-                {
-                    /*
-                    this.props.items.map((item, index) =>
-                        <li key={index}>{item}</li>
-                    ) */
-                    this.props.items.map((item, index) =>
-                        <TodoItem key={index} item={item} />
-                    )
-                }
-            </ul>
+            <>
+                <ul>
+                    {/* 
+                       <TodoItem />
+                       <TodoItem />
+                       <TodoItem /> */
+                    }
+                    {
+                        /*
+                        this.props.items.map((item, index) =>
+                            <li key={index}>{item}</li>
+                        ) */
+                        this.props.items.map((item, index) =>
+                            <TodoItem key={index} item={item} />
+                        )
+                    }
+                </ul>
+                <p>
+                    <button onClick={this.clearItems}>Clear Items</button>
+                </p>
+            </>
         );
     }
 }
@@ -46,13 +65,24 @@ class TodoItem extends React.Component {
 }
 
 class Action extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    onFormSubmit(event) {
+        event.preventDefault();
+
+        const item = event.target.elements.txtItem.value.trim();
+        if (item) {
+            console.log(item);
+            event.target.elements.txtItem.value = "";
+        }
+    }
+
     render() {
         return (
             <>
-                <p>
-                    <button>Clear Items</button>
-                </p>
-                <form>
+                <form onSubmit={this.onFormSubmit}>
                     <input type="text" name="txtItem" id="txtItem" />
                     <button type="submit">Add Item</button>
                 </form>
