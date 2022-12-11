@@ -15,7 +15,6 @@ class Header extends React.Component {
 }
 
 class TodoList extends React.Component {
-
     /* Uncaught TypeError: Cannot read properties of undefined (reading 'props') ÇÖZÜM */
     constructor(props) {
         super(props);
