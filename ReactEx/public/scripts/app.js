@@ -24,7 +24,8 @@ var Header = /*#__PURE__*/function (_React$Component) {
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, "Todo Application"), /*#__PURE__*/React.createElement("div", null, "Lorem, ipsum."));
+      console.log("Header Props : ", this.props);
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, this.props.title), /*#__PURE__*/React.createElement("div", null, this.props.description));
     }
   }]);
   return Header;
@@ -39,7 +40,18 @@ var TodoList = /*#__PURE__*/function (_React$Component2) {
   _createClass(TodoList, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement(TodoItem, null), /*#__PURE__*/React.createElement(TodoItem, null), /*#__PURE__*/React.createElement(TodoItem, null));
+      console.log("TodoList Props : ", this.props.items);
+      return /*#__PURE__*/React.createElement("ul", null,
+      /*
+      this.props.items.map((item, index) =>
+          <li key={index}>{item}</li>
+      ) */
+      this.props.items.map(function (item, index) {
+        return /*#__PURE__*/React.createElement(TodoItem, {
+          key: index,
+          item: item
+        });
+      }));
     }
   }]);
   return TodoList;
@@ -54,7 +66,8 @@ var TodoItem = /*#__PURE__*/function (_React$Component3) {
   _createClass(TodoItem, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("li", null, "Lorem, ipsum.");
+      console.log("TodoItem Props : ", this.props.item);
+      return /*#__PURE__*/React.createElement("li", null, this.props.item);
     }
   }]);
   return TodoItem;
@@ -90,7 +103,19 @@ var TodoApp = /*#__PURE__*/function (_React$Component5) {
   _createClass(TodoApp, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, null), /*#__PURE__*/React.createElement(TodoList, null), /*#__PURE__*/React.createElement(Action, null));
+      var title = "Todo Application !";
+      var description = "Lorem ipsum dolor sit amet consectetur adipisicing.";
+      var app = {
+        title: "Todo Application !!!",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit?",
+        items: ["item 1", "item 2", "item 3", "item 4"]
+      };
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, {
+        title: app.title,
+        description: app.description
+      }), /*#__PURE__*/React.createElement(TodoList, {
+        items: app.items
+      }), /*#__PURE__*/React.createElement(Action, null));
     }
   }]);
   return TodoApp;
