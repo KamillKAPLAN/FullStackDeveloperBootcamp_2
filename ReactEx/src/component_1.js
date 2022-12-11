@@ -1,5 +1,13 @@
 const root = document.getElementById("root");
 
+/* ES5 */
+/*
+const Header = function () {
+    return <h1>Merhaba ben Kamil KAPLAN.</h1>;
+}
+var template = <Header />; 
+*/
+
 class Header extends React.Component {
     render() {
         /* return <h1>Merhaba ben Kamil</h1>; */
@@ -11,6 +19,16 @@ class Header extends React.Component {
         );
     }
 }
+
+/*var template = (
+    <>
+        <Header />
+        <Header />
+        <Header />
+        <Header />
+        <Header />
+    </>
+);*/
 
 class Todo extends React.Component {
     render() {
@@ -49,6 +67,19 @@ var template = (
         <Action />
     </>
 );
+
+/*
+import React, { Component } from 'react'
+
+export default class app extends Component {
+  render() {
+    return (
+      <div>app</div>
+    )
+  }
+} 
+*/
+
 
 /* ReactDOM */
 ReactDOM.render(template, root);
