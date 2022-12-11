@@ -1,4 +1,3 @@
-const root = document.getElementById("root");
 
 /* ReactDOM */
-ReactDOM.render(<TodoApp />, root);
+ReactDOM.render("", document.getElementById("root"));
