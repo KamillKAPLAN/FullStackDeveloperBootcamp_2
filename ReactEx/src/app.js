@@ -2,7 +2,6 @@ const root = document.getElementById("root");
 
 class Header extends React.Component {
     render() {
-        /* return <h1>Merhaba ben Kamil</h1>; */
         return (
             <>
                 <h1>Todo Application</h1>
@@ -12,16 +11,22 @@ class Header extends React.Component {
     }
 }
 
-class Todo extends React.Component {
+class TodoList extends React.Component {
     render() {
         return (
-            <>
-                <ul>
-                    <li>Lorem, ipsum.</li>
-                    <li>Lorem, ipsum dolor.</li>
-                    <li>Lorem ipsum dolor sit.</li>
-                </ul>
-            </>
+            <ul>
+                <TodoItem />
+                <TodoItem />
+                <TodoItem />
+            </ul>
+        );
+    }
+}
+
+class TodoItem extends React.Component {
+    render() {
+        return (
+            <li>Lorem, ipsum.</li>
         );
     }
 }
@@ -42,13 +47,17 @@ class Action extends React.Component {
     }
 }
 
-var template = (
-    <>
-        <Header />
-        <Todo />
-        <Action />
-    </>
-);
+class TodoApp extends React.Component {
+    render() {
+        return (
+            <>
+                <Header />
+                <TodoList />
+                <Action />
+            </>
+        );
+    }
+}
 
 /* ReactDOM */
-ReactDOM.render(template, root);
+ReactDOM.render(<TodoApp />, root);

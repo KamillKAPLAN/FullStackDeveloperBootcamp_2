@@ -24,33 +24,47 @@ var Header = /*#__PURE__*/function (_React$Component) {
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      /* return <h1>Merhaba ben Kamil</h1>; */
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, "Todo Application"), /*#__PURE__*/React.createElement("div", null, "Lorem, ipsum."));
     }
   }]);
   return Header;
 }(React.Component);
-var Todo = /*#__PURE__*/function (_React$Component2) {
-  _inherits(Todo, _React$Component2);
-  var _super2 = _createSuper(Todo);
-  function Todo() {
-    _classCallCheck(this, Todo);
+var TodoList = /*#__PURE__*/function (_React$Component2) {
+  _inherits(TodoList, _React$Component2);
+  var _super2 = _createSuper(TodoList);
+  function TodoList() {
+    _classCallCheck(this, TodoList);
     return _super2.apply(this, arguments);
   }
-  _createClass(Todo, [{
+  _createClass(TodoList, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Lorem, ipsum."), /*#__PURE__*/React.createElement("li", null, "Lorem, ipsum dolor."), /*#__PURE__*/React.createElement("li", null, "Lorem ipsum dolor sit.")));
+      return /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement(TodoItem, null), /*#__PURE__*/React.createElement(TodoItem, null), /*#__PURE__*/React.createElement(TodoItem, null));
     }
   }]);
-  return Todo;
+  return TodoList;
 }(React.Component);
-var Action = /*#__PURE__*/function (_React$Component3) {
-  _inherits(Action, _React$Component3);
-  var _super3 = _createSuper(Action);
+var TodoItem = /*#__PURE__*/function (_React$Component3) {
+  _inherits(TodoItem, _React$Component3);
+  var _super3 = _createSuper(TodoItem);
+  function TodoItem() {
+    _classCallCheck(this, TodoItem);
+    return _super3.apply(this, arguments);
+  }
+  _createClass(TodoItem, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement("li", null, "Lorem, ipsum.");
+    }
+  }]);
+  return TodoItem;
+}(React.Component);
+var Action = /*#__PURE__*/function (_React$Component4) {
+  _inherits(Action, _React$Component4);
+  var _super4 = _createSuper(Action);
   function Action() {
     _classCallCheck(this, Action);
-    return _super3.apply(this, arguments);
+    return _super4.apply(this, arguments);
   }
   _createClass(Action, [{
     key: "render",
@@ -66,7 +80,20 @@ var Action = /*#__PURE__*/function (_React$Component3) {
   }]);
   return Action;
 }(React.Component);
-var template = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, null), /*#__PURE__*/React.createElement(Todo, null), /*#__PURE__*/React.createElement(Action, null));
-
+var TodoApp = /*#__PURE__*/function (_React$Component5) {
+  _inherits(TodoApp, _React$Component5);
+  var _super5 = _createSuper(TodoApp);
+  function TodoApp() {
+    _classCallCheck(this, TodoApp);
+    return _super5.apply(this, arguments);
+  }
+  _createClass(TodoApp, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, null), /*#__PURE__*/React.createElement(TodoList, null), /*#__PURE__*/React.createElement(Action, null));
+    }
+  }]);
+  return TodoApp;
+}(React.Component);
 /* ReactDOM */
-ReactDOM.render(template, root);
+ReactDOM.render( /*#__PURE__*/React.createElement(TodoApp, null), root);
